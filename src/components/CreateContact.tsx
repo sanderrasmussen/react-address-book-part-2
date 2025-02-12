@@ -1,9 +1,10 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Contact } from "../types";
+import { useNavigate } from "react-router-dom";
 
 function CreateContact(){
-
+     const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -21,6 +22,7 @@ function CreateContact(){
               },
             body: JSON.stringify(data)
           })
+          navigate(-1)
       }
     
     return(
