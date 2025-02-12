@@ -18,13 +18,15 @@ function App() {
             <Link to="/Contacts" className="link">Contacts</Link>
             <Link to="/AddContact" className='link'>Add Contact</Link>
        
-      
+
             <Routes>
                 <Route path="/Contacts" element={<Contacts/>}/>
                 <Route path="/Contacts/:id" element={<ContactItem/>}></Route>
                 <Route path="/AddContact" element={<CreateContact/>}></Route>
             </Routes>
             </div>
+
+
         </ContactsContext.Provider >
 
     );
