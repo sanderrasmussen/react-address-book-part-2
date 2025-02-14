@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form"
 import { Contact } from "../types";
-import { useNavigate } from "react-router-dom";
-
-function CreateContact(){
+import { useNavigate, useParams } from "react-router-dom";
+function UpdateContact(){
+    const {id}=useParams();
      const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -14,8 +15,8 @@ function CreateContact(){
       const onSubmit: SubmitHandler<Contact> = (data) => {
         console.log(data)
         //posting to db
-        fetch('https://boolean-uk-api-server.fly.dev/sanderrasmussen/contact', {
-            method: 'POST',
+        fetch(`https://boolean-uk-api-server.fly.dev/sanderrasmussen/contact/${id}`, {
+            method: 'PUT',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
@@ -26,9 +27,10 @@ function CreateContact(){
       }
     
     return(
-        <div>
-            <h1>Create new contact</h1>
+ 
+        
     <form onSubmit={handleSubmit(onSubmit)}>
+    <h1>Update Contact</h1>
       {/* register your input into the hook by invoking the "register" function */}
       <input defaultValue="Firstname" {...register("firstName")} />
       {errors.firstName && <span>This field is required</span>}
@@ -57,7 +59,8 @@ function CreateContact(){
 
       <input type="submit" />
     </form>
-        </div>
+      
     )
 }
-export default CreateContact;
+export default UpdateContact;
+

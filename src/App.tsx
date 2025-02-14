@@ -7,6 +7,7 @@ import ContactItem from './components/ContactItem';
 import { ContactsContext } from './Contexts';
 import { Contact } from './types';
 import CreateContact from './components/CreateContact';
+import UpdateContact from './components/UpdateContact';
 //api : https://boolean-uk-api-server.fly.dev/sanderrasmussen/contact 
 function App() {
   
@@ -17,15 +18,15 @@ function App() {
             <div className='parentDiv'> 
             <Link to="/Contacts" className="link">Contacts</Link>
             <Link to="/AddContact" className='link'>Add Contact</Link>
-       
 
             <Routes>
                 <Route path="/Contacts" element={<Contacts/>}/>
                 <Route path="/Contacts/:id" element={<ContactItem/>}></Route>
                 <Route path="/AddContact" element={<CreateContact/>}></Route>
+                <Route path="/UpdateContact" element={<UpdateContact></UpdateContact>}></Route>
             </Routes>
             </div>
-
+     
 
         </ContactsContext.Provider >
 

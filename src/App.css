@@ -2,6 +2,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(49, 49, 49);
     color: white;
+
 }
 li{
     list-style: none;
@@ -31,14 +32,33 @@ input{
 .parentDiv{
 
     display: flex;
-    align-items: baseline;
-    width: 100%;
+    align-items: flex-start;
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+
+   
 
 }
-div{
+.standardDiv{
     display: flex;
-    align-items: baseline;
+    align-items:flex;
+    flex-direction: column;
     margin-left: 5%;
     margin-top: 1%;
     width: 80%;
+    
+    border: 2px solid black;
+}
+div{
+    width: 100%;
+}
+.updateFormDiv{
+    display: flex;
+    margin: 10%;
+    align-items: baseline;
+
+}
+img{
+    margin: 3%;
 }
